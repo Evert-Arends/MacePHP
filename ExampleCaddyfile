@@ -1,0 +1,13 @@
+localhost {
+    root * /home/berm/Development/Work/BitHopper/MacePHP <-- must be full path
+    log {
+        output file /tmp/tesTLOG.log
+        level DEBUG
+    }
+    file_server
+    php_fastcgi unix//var/run/php-fpm/php-fpm.sock
+}
+
+localhost:2016 {
+	respond "Goodbye, world!"
+}
