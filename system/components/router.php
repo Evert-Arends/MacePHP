@@ -85,9 +85,10 @@ class Router extends Middleware
 
         $this->requireController($this->getController());
 
-
-        if (!$this->checkPrivileges($this->getRoute()->_route)) {
-            header("Location: " . BASEPATH . "404#NOTALLOWED");
+        if(AUTH) {
+            if (!$this->checkPrivileges($this->getRoute()->_route)) {
+                header("Location: " . BASEPATH . "404#NOTALLOWED");
+            }
         }
     }
 
