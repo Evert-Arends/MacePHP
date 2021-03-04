@@ -25,6 +25,12 @@ $routes = array(
     "home" =>
         array(
             "controller" => "index_controller",
+            "protected" => true,
+            "level" => array(0)
+        ),
+    "ding" =>
+        array(
+            "controller" => "test_controller",
             "protected" => false,
             "level" => array(0)
         ),

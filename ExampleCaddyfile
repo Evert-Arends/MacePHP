@@ -1,9 +1,17 @@
 localhost {
-    root * /home/berm/Development/Work/BitHopper/MacePHP <-- must be full path
+    root * /home/berm/Development/Work/BitHopper/MacePHP
     log {
         output file /tmp/tesTLOG.log
         level DEBUG
     }
+    @pages {
+        path_regexp modx ^/(.*)$
+        file {
+            try_files {path} /index.php
+        }
+        not path /manager /manager/* /connectors/*
+    }
+    rewrite @pages {http.matchers.file.relative}?c={http.regexp.modx.1}
     file_server
     php_fastcgi unix//var/run/php-fpm/php-fpm.sock
 }
