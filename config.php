@@ -21,7 +21,7 @@ else
  ****************************************************/
 
 // Database Switch
-define("DB", true);
+define("DB", false);
 
 // Database Details
 define("DB_HOST", "");

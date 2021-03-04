@@ -36,7 +36,7 @@ final class Core
             require_once($file);
 
         // Include the configuration
-        require_once("example_config.php");
+        require_once("config.php");
 
         // Use the routing engine.
         $router = new Router();
